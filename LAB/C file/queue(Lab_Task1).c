@@ -54,7 +54,7 @@ void enqueue(int x)
     printf("Queue Full\n");
   else
   {
-    if (isEmpty())
+    if (isEmpty()) //🔙
     {
       front = 0;
     }
@@ -88,7 +88,8 @@ int isFull()
 
 int isEmpty()
 {
-  if (front == -1 && rear == -1)
+  if (front == -1 && rear == -1 || front == rear + 1)
+    // front == -1 || front == rear + 1 🔙
     return 1;
   else
     return 0;
@@ -96,7 +97,7 @@ int isEmpty()
 
 int Front()
 {
-  if (front != -1)
+  if (front != -1)  //🔙
     return queue[front];
   else
     return 0;
