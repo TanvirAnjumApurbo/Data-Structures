@@ -55,17 +55,25 @@ int main()
 int isFull()
 {
   if (top == MAX - 1)
+  {
     return 1;
+  }
   else
+  {
     return 0;
+  }
 }
 
 int isEmpty()
 {
   if (top == -1)
+  {
     return 1;
+  }
   else
+  {
     return 0;
+  }
 }
 
 void push(int data)
@@ -107,7 +115,9 @@ int peek()
     exit(1);
   }
   else
+  {
     return stack_arr[top];
+  }
 }
 
 void print()
