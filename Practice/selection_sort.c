@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 void selection_sort(int arr[], int n);
-void swap(int *a, int *b);
 
 int main()
 {
@@ -30,17 +29,14 @@ void selection_sort(int arr[], int n)
         min = j;
 
       if (min != i)
-        swap(&arr[i], &arr[min]);
+      {
+        int temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+      }
     }
   }
   printf("Sorted array is: ");
   for (i = 0; i < n; i++)
     printf("%d  ", arr[i]);
-}
-
-void swap(int *a, int *b)
-{
-  *a = *a ^ *b;
-  *b = *a ^ *b;
-  *a = *a ^ *b;
 }

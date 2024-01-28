@@ -16,6 +16,7 @@ void main()
   printf("A: %p\n", A);
   printf("B: %p\n", B);
   printf("C: %p\n", C);
+
   // assigning data to the nodes
   A->id = 10;
   B->id = 20;
@@ -24,11 +25,12 @@ void main()
   A->name = 'A';
   B->name = 'B';
   C->name = 'C';
+
   // linking the nodes
   A->next = B;
   B->next = C;
-  C->next = NULL; //If remove NULL, it will be a circular linked list
-  
+  C->next = NULL; // If remove NULL, it will be a circular linked list
+
   // creating a head pointer
   struct node *head = A;
 

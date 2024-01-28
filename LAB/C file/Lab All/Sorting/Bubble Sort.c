@@ -15,18 +15,18 @@ int main()
 
 void bubble_sort(int array[], int n)
 {
-  int pass, i;
+  int i, j;
   bool flag;
-  for (pass = 0; pass < n - 1; pass++)
+  for (i = 0; i < n - 1; i++)
   {
     flag = false;
-    for (i = 0; i < n - pass - 1; i++)
+    for (j = 0; j < n - i - 1; j++)
     {
-      if (array[i] > array[i + 1])
+      if (array[j] > array[j + 1])
       {
-        int temp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = temp;
+        int temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
         flag = true;
       }
     }
@@ -36,9 +36,9 @@ void bubble_sort(int array[], int n)
     }
   }
   printf("Sorted array is: ");
-  for (i = 0; i < n; i++)
+  for (j = 0; j < n; j++)
   {
-    printf("%d ", array[i]);
+    printf("%d ", array[j]);
   }
   printf("\n");
 }

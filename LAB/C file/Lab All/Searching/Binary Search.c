@@ -1,49 +1,34 @@
 #include <stdio.h>
 
-int binarySearch(int data);
-int A[100], n, i, data, index;
+int BS(int A[], int data, int n);
 
 int main()
 {
-  printf("Enter the number of elements: ");
-  scanf("%d", &n);
-  printf("Enter the elements: ");
-  for (i = 0; i < n; i++)
-  {
-    scanf("%d", &A[i]);
-  }
-  printf("Enter the element to be searched: ");
+  int A[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+  int n = sizeof(A) / sizeof(A[0]);
+  int data;
+  printf("Enter data: ");
   scanf("%d", &data);
-  index = binarySearch(data);
+  int index = BS(A, data, n);
   if (index == -1)
-  {
-    printf("Element not found\n");
-  }
+    printf("Data not found\n");
   else
-  {
-    printf("Element found at index %d\n", index);
-  }
+    printf("%d found at index %d\n", data, index);
   return 0;
 }
 
-int binarySearch(int data)
+int BS(int A[], int data, int n)
 {
-  int low = 0, high = n - 1, mid;
-  while (low <= high)
+  int l = 0, h = n - 1, mid;
+  while (l <= h)
   {
-    mid = (low + high) / 2;
+    mid = (l + h) / 2;
     if (data == A[mid])
-    {
       return mid;
-    }
     else if (data < A[mid])
-    {
-      high = mid - 1;
-    }
+      h = mid - 1;
     else
-    {
-      low = mid + 1;
-    }
+      l = mid + 1;
   }
   return -1;
 }
